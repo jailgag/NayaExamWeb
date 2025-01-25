@@ -100,5 +100,17 @@ public class MemberDAO {
 		return result;
 		
 	}
+	//remove 삭제 Service에서 넘어옴! 재평가에 나옴!!위에 updatemember랑 비슷하다!!
+	public int deleteMember(Connection conn, String memberId) throws SQLException {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String query = "DELETE FROM MEMBER_TBL WHERE MEMBER_ID = ?";
+		pstmt = conn.prepareStatement(query); //애드스로우!!
+		pstmt.setString(1, memberId); 
+		result = pstmt.executeUpdate();
+		pstmt.close();
+		return result;
+	}
 
 }

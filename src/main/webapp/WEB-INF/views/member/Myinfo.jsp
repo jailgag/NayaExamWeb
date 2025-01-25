@@ -63,6 +63,6 @@
 		</li>
 		
 		</ul>
-		<a href ="/member/modify">수정하기</a> <a href="#">탈퇴하기</a>
+		<a href ="/member/modify">수정하기</a> <a href="/member/remove">탈퇴하기</a>
 	</body>
 </html>

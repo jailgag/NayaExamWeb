@@ -106,5 +106,26 @@ public class MemberService {
 		}
 		return result;
 	}
+	//remove 탈퇴? 삭제하기!!  위에꺼 복붙!해서 이름만바꾸기!!
+	public int deleteMember(String memberId) {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		int result =0;
+		try {
+			conn =jdbcTemplate.getConnection();
+			result = mDao.deleteMember(conn, memberId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} //
+		}
+		return result;
+	}
 	
 }
